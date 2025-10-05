@@ -1,32 +1,22 @@
 ---
-AWSTemplateFormatVersion: 2010-09-09
-Description: "Déploie une instance EC2 avec AMI spécifique à la région"
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Déploie une instance EC2 dans la région spécifiée"
 
 Parameters:
-  RegionAMIMap:
+  RegionAMI:
     Type: String
-    Default: eu-west-3
-    AllowedValues:
-      - eu-west-2
-      - eu-west-3
-    Description: Région cible pour le déploiement
-
-Mappings:
-  RegionMap:
-    eu-west-2:
-      AMI: ami-0336cdd409ab5eec4  # Exemple AMI pour Londres
-    eu-west-3:
-      AMI: ami-0d8c6c2b092ebb980  # Exemple AMI pour Paris
+    Description: "AMI spécifique à la région"
+  InstanceName:
+    Type: String
+    Default: "MultiRegionInstance"
+    Description: "Nom de l'instance EC2"
 
 Resources:
   MyInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId:!FindInMap
-        - RegionMap
-        -!Ref RegionAMIMap
-        - AMI
+      ImageId:!Ref RegionAMI
       InstanceType: t3.micro
       Tags:
         - Key: Name
-          Value: InstanceMultiRegion
+          Value:!Ref InstanceName
