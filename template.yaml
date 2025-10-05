@@ -1,5 +1,5 @@
-yaml
-AWSTemplateFormatVersion: '2010-09-09'
+---
+AWSTemplateFormatVersion: 2010-09-09
 Description: Déploie une instance EC2 simple
 
 Resources:
