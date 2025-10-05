@@ -1,0 +1,10 @@
+yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Déploie une instance EC2 simple
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0d8c6c2b092ebb980
+      InstanceType: t3.micro
