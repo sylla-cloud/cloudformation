@@ -1,7 +1,7 @@
 ---
 
 yaml
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: 2010-09-09
 Description: Déploie une instance EC2 avec AMI spécifique à la région
 
 Parameters:
