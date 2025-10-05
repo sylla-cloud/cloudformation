@@ -1,5 +1,5 @@
-yaml
-AWSTemplateFormatVersion: '2010-09-09'
+---
+AWSTemplateFormatVersion: 2010-09-09
 Description: Déploie une instance EC2 avec AMI spécifique à la région
 
 Parameters:
@@ -14,7 +14,7 @@ Parameters:
 Mappings:
   RegionMap:
     eu-west-2:
-      AMI: ami-0c1a7f89451184c8b  # Exemple AMI pour Londres
+      AMI: ami-0336cdd409ab5eec4  # Exemple AMI pour Londres
     eu-west-3:
       AMI: ami-0d8c6c2b092ebb980  # Exemple AMI pour Paris
 
