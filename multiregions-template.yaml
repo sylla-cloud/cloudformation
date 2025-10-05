@@ -22,7 +22,10 @@ Resources:
   MyInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId:!FindInMap [RegionMap,!Ref RegionAMIMap, AMI]
+      ImageId: !FindInMap
+        - RegionMap
+        -!Ref RegionAMIMap
+        - AMI
       InstanceType: t3.micro
       Tags:
         - Key: Name
