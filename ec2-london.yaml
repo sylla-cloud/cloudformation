@@ -1,0 +1,13 @@
+yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 Londres
+
+Resources:
+  EC2InstanceLondon:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-09e3b07b6f0ecf3ee # Amazon Linux 2 pour eu-west-2
+      Tags:
+        - Key: Name
+          Value: EC2-London
