@@ -1,0 +1,13 @@
+yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 Paris
+
+Resources:
+  EC2InstanceParis:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c55b159cbfafe1f0 # Amazon Linux 2 pour eu-west-3
+      Tags:
+        - Key: Name
+          Value: EC2-Paris
